@@ -24,8 +24,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.7;
+        Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-se新
       background-color: #0f172a;
       color: #e5e7eb;
     }
@@ -154,9 +153,69 @@
     /* ===============================
        CSS:ABOUT-START
     =============================== */
-    .section-about p {
+    .section-about {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .about-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .about-text p {
       margin-bottom: 1rem;
       color: #d1d5db;
+    }
+
+    .about-list {
+      margin: 1.5rem 0;
+      padding-left: 1.25rem;
+    }
+
+    .about-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .about-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: #22d3ee;
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background-color: #67e8f9;
+    }
+
+    .btn-outline {
+      border: 1px solid #22d3ee;
+      color: #22d3ee;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(34, 211, 238, 0.1);
+    }
+
+    .about-image {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
     /* ===============================
        CSS:ABOUT-END
@@ -216,6 +275,16 @@
 
       .hero-text,
       .hero-image {
+        flex: 1;
+      }
+
+      .about-layout {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .about-text,
+      .about-image {
         flex: 1;
       }
 
@@ -282,17 +351,36 @@
 
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
-        <div class="container">
-          <h2 id="about-heading" class="section-title">
-            關於我（之後會用 Section SDD 替換）
-          </h2>
-          <p>
-            這裡目前是 About 區的占位內容，未來將介紹個人背景、學習歷程、
-            技術專長發展方向與職涯目標，幫助企業或合作對象更深入了解我。
-          </p>
-          <p>
-            之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。
-          </p>
+        <div class="container about-layout">
+          <div class="about-text">
+            <h2 id="about-heading" class="section-title">關於我</h2>
+            <p>
+              我目前專注於前端開發與技術教學，主要使用 HTML、CSS 與 JavaScript 建立具備良好使用者體驗的網站與介面，
+              同時也協助團隊建立清晰的前端架構與開發流程。
+            </p>
+            <p>
+              我的背景結合實務開發與教學經驗，做事風格重視溝通與細節，
+              喜歡把複雜的技術概念拆解清楚，讓團隊與客戶都能理解並安心合作。
+            </p>
+
+            <ul class="about-list">
+              <li>能獨立規劃並實作響應式網站與前端架構</li>
+              <li>擅長將需求轉化為清晰的介面與互動流程</li>
+              <li>樂於教學與文件整理，幫助團隊建立共識</li>
+            </ul>
+
+            <div class="about-actions">
+              <a class="btn btn-primary" href="#projects">查看作品集</a>
+              <a class="btn btn-outline" href="#contact">聯絡我</a>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <img
+              src="https://source.unsplash.com/800x600/?programmer,coding,computer"
+              alt="專注撰寫程式碼的工程師在電腦前工作的情境"
+              loading="lazy">
+          </div>
         </div>
       </section>
       <!-- SECTION:ABOUT-END -->
